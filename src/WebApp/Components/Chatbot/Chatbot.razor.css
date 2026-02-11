@@ -113,6 +113,27 @@
         max-height: 10rem;
     }
 
+    .chatbot-chat ::deep .chat-product-link {
+        color: #5d2e8c;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-thickness: 0.125rem;
+        text-underline-offset: 0.125rem;
+    }
+
+    .chatbot-chat .message-user ::deep .chat-product-link {
+        color: #b8d4ff;
+    }
+
+    .chatbot-chat ::deep .chat-product-link:hover {
+        color: #102c57;
+        text-decoration-thickness: 0.15rem;
+    }
+
+    .chatbot-chat .message-user ::deep .chat-product-link:hover {
+        color: white;
+    }
+
     .thinking {
         color: gray;
         font-style: italic;

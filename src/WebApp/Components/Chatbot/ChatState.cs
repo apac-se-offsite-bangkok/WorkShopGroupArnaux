@@ -57,6 +57,11 @@ public class ChatState
                 You try to be concise and only provide longer responses if necessary.
                 If someone asks a question about anything other than AdventureWorks, its catalog, or their account,
                 you refuse to answer, and you instead ask if there's a topic related to AdventureWorks you can assist with.
+                
+                Important: When you receive catalog search results, each product includes a ProductPageUrl field.
+                When mentioning products, format them as markdown links: [ProductName](ProductPageUrl)
+                Also include product images using: ![ProductName](ImageUrl)
+                This helps customers navigate directly to products they're interested in.
                 """),
             new ChatMessage(ChatRole.Assistant, """
                 Hi! I'm the AdventureWorks Concierge. How can I help?
@@ -120,12 +125,27 @@ public class ChatState
         try
         {
             var results = await _catalogService.GetCatalogItemsWithSemanticRelevance(0, 8, productDescription!);
-            for (int i = 0; i < results.Data.Count; i++)
+            var enrichedItems = results.Data.Select(item => new
             {
-                results.Data[i] = results.Data[i] with { PictureUrl = _productImages.GetProductImageUrl(results.Data[i].Id) };
-            }
+                item.Id,
+                item.Name,
+                item.Description,
+                item.Price,
+                ImageUrl = _productImages.GetProductImageUrl(item.Id),
+                ProductPageUrl = $"/item/{item.Id}",
+                item.CatalogBrand,
+                item.CatalogType
+            }).ToList();
 
-            return JsonSerializer.Serialize(results);
+            var enrichedResult = new
+            {
+                results.PageIndex,
+                results.PageSize,
+                results.Count,
+                Data = enrichedItems
+            };
+
+            return JsonSerializer.Serialize(enrichedResult);
         }
         catch (HttpRequestException e)
         {
