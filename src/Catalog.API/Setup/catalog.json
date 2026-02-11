@@ -21,7 +21,8 @@
     "Brand": "WildRunner",
     "Name": "Alpine Fusion Goggles",
     "Description": "Enhance your skiing experience with the Alpine Fusion Goggles from WildRunner. These goggles offer full UV protection and anti-fog lenses to keep your vision clear on the slopes. With their stylish silver frame and orange lenses, you'll stand out from the crowd. Adjustable straps ensure a secure fit, while the soft foam padding provides comfort all day long.",
-    "Price": 79.99
+    "Price": 79.99,
+    "oldPrice": 115.00
   },
   {
     "Id": 4,
@@ -61,7 +62,8 @@
     "Brand": "Grolltex",
     "Name": "Frostbite Insulated Jacket",
     "Description": "Stay warm and stylish with the Frostbite Insulated Jacket by Grolltex. Featuring a water-resistant outer shell and lightweight insulation, this jacket is perfect for cold weather adventures. The black and gray color combination and Grolltex logo add a touch of sophistication. With its adjustable hood and multiple pockets, this jacket offers both style and functionality.",
-    "Price": 179.99
+    "Price": 179.99,
+    "oldPrice": 229.99
   },
   {
     "Id": 9,
@@ -93,7 +95,8 @@
     "Brand": "Zephyr",
     "Name": "Powder Pro Snowboard",
     "Description": "The Powder Pro Snowboard by Zephyr is designed for the ultimate ride through deep snow. Its floating camber allows for effortless turns and smooth maneuverability, while the lightweight carbon fiber construction ensures maximum control at high speeds. This board, available in vibrant turquoise, is a must-have for any backcountry shredder.",
-    "Price": 399.00
+    "Price": 399.00,
+    "oldPrice": 549.00
   },
   {
     "Id": 13,
@@ -173,7 +176,8 @@
     "Brand": "Raptor Elite",
     "Name": "Venture 2022 Snowboard",
     "Description": "The Raptor Elite Venture 2022 Snowboard is a true all-mountain performer, perfect for riders of all levels. Its sleek design, combined with the vibrant blue color, makes it stand out on the slopes. The snowboard features a responsive camber profile, carbon fiber laminates for enhanced stability, and a sintered base for maximum speed. Take your snowboarding skills to new heights with the Raptor Elite Venture 2022 Snowboard.",
-    "Price": 499.00
+    "Price": 499.00,
+    "oldPrice": 649.00
   },
   {
     "Id": 23,
@@ -221,7 +225,8 @@
     "Brand": "Solstix",
     "Name": "Alpine Peak Down Jacket",
     "Description": "The Solstix Alpine Peak Down Jacket is crafted for extreme cold conditions. With its bold red color and sleek design, this jacket combines style with functionality. Made with high-quality goose down insulation, the Alpine Peak Jacket provides exceptional warmth and comfort. The jacket features a removable hood, adjustable cuffs, and multiple zippered pockets for storage. Conquer the harshest weather with the Solstix Alpine Peak Down Jacket.",
-    "Price": 249.99
+    "Price": 249.99,
+    "oldPrice": 319.99
   },
   {
     "Id": 29,
@@ -277,7 +282,8 @@
     "Brand": "Raptor Elite",
     "Name": "Carbon Fiber Trekking Poles",
     "Description": "Hike with confidence using the Raptor Elite Carbon Fiber Trekking Poles. These lightweight and durable poles provide stability on various terrains and reduce strain on your joints. With an ergonomic grip and adjustable length, these poles are a must-have for your outdoor adventures.",
-    "Price": 99.00
+    "Price": 99.00,
+    "oldPrice": 139.00
   },
   {
     "Id": 36,
@@ -397,7 +403,8 @@
     "Brand": "AirStrider",
     "Name": "Astro GPS Navigator",
     "Description": "Never get lost on your outdoor adventures with the Astro GPS Navigator by AirStrider. This compact and rugged device comes loaded with topographic maps, GPS tracking, waypoint storage, and a long-lasting battery. It is equipped with a high-resolution color display for easy navigation in any lighting condition. Available in a sleek gray color.",
-    "Price": 249.99
+    "Price": 249.99,
+    "oldPrice": 329.99
   },
   {
     "Id": 51,

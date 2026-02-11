@@ -30,6 +30,37 @@ img {
     font-weight: 600;
 }
 
+.promotional-pricing-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+}
+
+.promo-label-text {
+    background-color: #d32f2f;
+    color: #ffffff;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    border-radius: 4px;
+    width: fit-content;
+    letter-spacing: 1px;
+}
+
+.former-cost-display {
+    color: #757575;
+    font-size: 1rem;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+.reduced-cost-display {
+    color: #d32f2f;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
 .add-to-cart button {
     background-color: black;
     color: white;
