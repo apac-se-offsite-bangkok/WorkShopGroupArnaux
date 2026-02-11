@@ -20,11 +20,11 @@ public static partial class MessageProcessor
             var contentToHere = message.Substring(prevEnd, match.Index - prevEnd);
             result.Append(HtmlEncoder.Default.Encode(contentToHere));
             
-            var isImage = match.Value.StartsWith('!');
+            var isMarkdownImage = match.Value.StartsWith('!');
             var labelText = match.Groups[1].Value;
             var targetUrl = match.Groups[2].Value;
             
-            if (isImage)
+            if (isMarkdownImage)
             {
                 result.Append($"<img title=\"{(HtmlEncoder.Default.Encode(labelText))}\" src=\"{(HtmlEncoder.Default.Encode(targetUrl))}\" />");
             }
