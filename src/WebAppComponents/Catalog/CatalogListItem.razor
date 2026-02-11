@@ -5,10 +5,24 @@
     <a class="catalog-product" href="@ItemHelper.Url(Item)" data-enhance-nav="false">
         <span class='catalog-product-image'>
             <img alt="@Item.Name" src='@ProductImages.GetProductImageUrl(Item)' />
+            @if (ShowsPromotionalBadge)
+            {
+                <span class='promo-badge'>SALE</span>
+            }
         </span>
         <span class='catalog-product-content'>
             <span class='name'>@Item.Name</span>
-            <span class='price'>$@Item.Price.ToString("0.00")</span>
+            @if (ShowsPromotionalBadge)
+            {
+                <span class='dual-price-display'>
+                    <span class='was-price'>$@PreviousAmount.ToString("0.00")</span>
+                    <span class='now-price'>$@Item.Price.ToString("0.00")</span>
+                </span>
+            }
+            else
+            {
+                <span class='price'>$@Item.Price.ToString("0.00")</span>
+            }
         </span>
     </a>
 </div>
@@ -19,4 +33,7 @@
 
     [Parameter]
     public bool IsLoggedIn { get; set; }
+
+    private bool ShowsPromotionalBadge => Item.OldPrice != null && Item.OldPrice > Item.Price;
+    private decimal PreviousAmount => Item.OldPrice ?? 0m;
 }

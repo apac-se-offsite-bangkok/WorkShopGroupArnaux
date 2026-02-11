@@ -20,7 +20,18 @@
             </p>
             <form class="add-to-cart" method="post" @formname="add-to-cart" @onsubmit="@AddToCartAsync" data-enhance="@isLoggedIn">
                 <AntiforgeryToken />
-                <span class="price">$@item.Price.ToString("0.00")</span>
+                @if (ItemHasPromotionalPrice)
+                {
+                    <div class="promotional-pricing-wrapper">
+                        <span class="promo-label-text">SALE</span>
+                        <span class="former-cost-display">Was: $@FormerCostValue.ToString("0.00")</span>
+                        <span class="reduced-cost-display">Now: $@item.Price.ToString("0.00")</span>
+                    </div>
+                }
+                else
+                {
+                    <span class="price">$@item.Price.ToString("0.00")</span>
+                }
 
                 @if (isLoggedIn)
                 {
@@ -107,4 +118,7 @@ else if (notFound)
         var items = await BasketState.GetBasketItemsAsync();
         numInCart = items.FirstOrDefault(row => row.ProductId == ItemId)?.Quantity ?? 0;
     }
+
+    private bool ItemHasPromotionalPrice => item?.OldPrice != null && item.OldPrice > item.Price;
+    private decimal FormerCostValue => item?.OldPrice ?? 0m;
 }

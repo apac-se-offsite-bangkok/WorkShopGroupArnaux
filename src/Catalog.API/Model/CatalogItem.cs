@@ -15,6 +15,8 @@ public class CatalogItem
 
     public decimal Price { get; set; }
 
+    public decimal? OldPrice { get; set; }
+
     public string? PictureFileName { get; set; }
 
     public int CatalogTypeId { get; set; }

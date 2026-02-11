@@ -50,6 +50,7 @@ public partial class CatalogContextSeed(
                 Id = source.Id,
                 Description = source.Description,
                 Price = source.Price,
+                OldPrice = source.OldPrice,
                 CatalogBrandId = brandIdsByName[source.Brand!],
                 CatalogTypeId = typeIdsByName[source.Type!],
                 AvailableStock = 100,
@@ -82,5 +83,6 @@ public partial class CatalogContextSeed(
         public string? Name { get; set; }
         public string? Description { get; set; }
         public decimal Price { get; set; }
+        public decimal? OldPrice { get; set; }
     }
 }
