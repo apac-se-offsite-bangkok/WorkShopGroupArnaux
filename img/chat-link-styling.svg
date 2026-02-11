@@ -1,0 +1,95 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">
+    Product Link Styling Details
+  </text>
+  
+  <!-- Normal State -->
+  <g id="normal-state">
+    <text x="50" y="80" font-family="Arial" font-size="16" font-weight="bold" fill="#333">Normal State (Assistant Message)</text>
+    <rect x="50" y="95" width="700" height="80" rx="20" fill="#f4f0f4" stroke="#ddd" stroke-width="1"/>
+    <text x="70" y="120" font-family="Arial" font-size="14" fill="#333">Check out </text>
+    <text x="145" y="120" font-family="Arial" font-size="14" font-weight="600" fill="#5d2e8c" text-decoration="underline">
+      Alpine Trek Boots
+    </text>
+    <text x="280" y="120" font-family="Arial" font-size="14" fill="#333"> for mountain hiking.</text>
+    
+    <!-- Annotation -->
+    <rect x="70" y="140" width="250" height="25" rx="4" fill="#fff" stroke="#5d2e8c" stroke-width="1"/>
+    <text x="80" y="157" font-family="Monaco, monospace" font-size="11" fill="#5d2e8c">
+      color: #5d2e8c (purple)
+    </text>
+    <rect x="330" y="140" width="180" height="25" rx="4" fill="#fff" stroke="#5d2e8c" stroke-width="1"/>
+    <text x="340" y="157" font-family="Monaco, monospace" font-size="11" fill="#5d2e8c">
+      font-weight: 600
+    </text>
+    <rect x="520" y="140" width="200" height="25" rx="4" fill="#fff" stroke="#5d2e8c" stroke-width="1"/>
+    <text x="530" y="157" font-family="Monaco, monospace" font-size="11" fill="#5d2e8c">
+      text-decoration: underline
+    </text>
+  </g>
+  
+  <!-- Hover State -->
+  <g id="hover-state">
+    <text x="50" y="215" font-family="Arial" font-size="16" font-weight="bold" fill="#333">Hover State (Assistant Message)</text>
+    <rect x="50" y="230" width="700" height="80" rx="20" fill="#f4f0f4" stroke="#ddd" stroke-width="1"/>
+    <text x="70" y="255" font-family="Arial" font-size="14" fill="#333">Check out </text>
+    <text x="145" y="255" font-family="Arial" font-size="14" font-weight="600" fill="#102c57" text-decoration="underline">
+      Alpine Trek Boots
+    </text>
+    <text x="280" y="255" font-family="Arial" font-size="14" fill="#333"> for mountain hiking.</text>
+    
+    <!-- Hover indicator -->
+    <path d="M 145 240 L 145 215 L 125 215" stroke="#102c57" stroke-width="2" fill="none" marker-end="url(#pointer)"/>
+    <text x="60" y="210" font-family="Arial" font-size="12" font-weight="bold" fill="#102c57">HOVER</text>
+    
+    <!-- Annotation -->
+    <rect x="70" y="275" width="250" height="25" rx="4" fill="#fff" stroke="#102c57" stroke-width="1"/>
+    <text x="80" y="292" font-family="Monaco, monospace" font-size="11" fill="#102c57">
+      color: #102c57 (darker blue)
+    </text>
+    <rect x="330" y="275" width="280" height="25" rx="4" fill="#fff" stroke="#102c57" stroke-width="1"/>
+    <text x="340" y="292" font-family="Monaco, monospace" font-size="11" fill="#102c57">
+      text-decoration-thickness: 0.15rem
+    </text>
+  </g>
+  
+  <!-- User Message Style -->
+  <g id="user-message-state">
+    <text x="50" y="350" font-family="Arial" font-size="16" font-weight="bold" fill="#333">In User Messages</text>
+    <rect x="200" y="365" width="550" height="80" rx="20" fill="#102c57" stroke="#ddd" stroke-width="1"/>
+    <text x="220" y="390" font-family="Arial" font-size="14" fill="white">I want more info about </text>
+    <text x="410" y="390" font-family="Arial" font-size="14" font-weight="600" fill="#b8d4ff" text-decoration="underline">
+      Alpine Trek Boots
+    </text>
+    
+    <!-- Annotation -->
+    <rect x="220" y="410" width="280" height="25" rx="4" fill="#fff" stroke="#b8d4ff" stroke-width="1"/>
+    <text x="230" y="427" font-family="Monaco, monospace" font-size="11" fill="#0d47a1">
+      color: #b8d4ff (light blue for contrast)
+    </text>
+    <rect x="510" y="410" width="200" height="25" rx="4" fill="#fff" stroke="#b8d4ff" stroke-width="1"/>
+    <text x="520" y="427" font-family="Monaco, monospace" font-size="11" fill="#0d47a1">
+      hover: white
+    </text>
+  </g>
+  
+  <!-- CSS Code -->
+  <g id="css-code">
+    <text x="50" y="475" font-family="Arial" font-size="14" font-weight="bold" fill="#333">CSS Implementation:</text>
+    <rect x="200" y="460" width="550" height="20" rx="3" fill="#f5f5f5"/>
+    <text x="210" y="475" font-family="Monaco, monospace" font-size="10" fill="#666">
+      src/WebApp/Components/Chatbot/Chatbot.razor.css (lines 116-135)
+    </text>
+  </g>
+  
+  <!-- Pointer marker definition -->
+  <defs>
+    <marker id="pointer" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <polygon points="10 0, 0 3, 10 6" fill="#102c57" />
+    </marker>
+  </defs>
+</svg>
