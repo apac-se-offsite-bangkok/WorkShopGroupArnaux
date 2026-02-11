@@ -119,6 +119,6 @@ else if (notFound)
         numInCart = items.FirstOrDefault(row => row.ProductId == ItemId)?.Quantity ?? 0;
     }
 
-    private bool ItemHasPromotionalPrice => item?.OldPrice != null && item.OldPrice > item.Price;
-    private decimal FormerCostValue => item?.OldPrice ?? 0m;
+    private bool ItemHasPromotionalPrice => item?.OldPrice.HasValue == true && item.OldPrice.Value > item.Price;
+    private decimal FormerCostValue => item?.OldPrice ?? item?.Price ?? 0m;
 }

@@ -34,6 +34,6 @@
     [Parameter]
     public bool IsLoggedIn { get; set; }
 
-    private bool ShowsPromotionalBadge => Item.OldPrice != null && Item.OldPrice > Item.Price;
-    private decimal PreviousAmount => Item.OldPrice ?? 0m;
+    private bool ShowsPromotionalBadge => Item.OldPrice.HasValue && Item.OldPrice.Value > Item.Price;
+    private decimal PreviousAmount => Item.OldPrice ?? Item.Price;
 }
