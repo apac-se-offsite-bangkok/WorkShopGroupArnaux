@@ -1,0 +1,111 @@
+<svg width="900" height="700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="700" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="450" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">
+    How Product Links Work: Technical Flow
+  </text>
+  
+  <!-- Step 1: User Query -->
+  <g id="step1">
+    <rect x="50" y="70" width="800" height="60" rx="8" fill="#e3f2fd" stroke="#2196F3" stroke-width="2"/>
+    <text x="70" y="95" font-family="Arial" font-size="14" font-weight="bold" fill="#1976D2">1. User asks about products</text>
+    <text x="70" y="115" font-family="Arial" font-size="12" fill="#555">User: "Show me hiking boots"</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 450 130 L 450 160" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: SearchCatalog -->
+  <g id="step2">
+    <rect x="50" y="160" width="800" height="80" rx="8" fill="#fff3e0" stroke="#FF9800" stroke-width="2"/>
+    <text x="70" y="185" font-family="Arial" font-size="14" font-weight="bold" fill="#F57C00">2. ChatState.SearchCatalog() enriches results</text>
+    <text x="70" y="205" font-family="Monaco, monospace" font-size="11" fill="#555">
+      <tspan x="70" dy="0">ProductPageUrl = $"/item/{item.Id}"</tspan>
+      <tspan x="70" dy="15">ImageUrl = _productImages.GetProductImageUrl(item.Id)</tspan>
+    </text>
+    <rect x="600" y="175" width="230" height="50" rx="4" fill="#fff" stroke="#ddd"/>
+    <text x="610" y="193" font-family="Monaco, monospace" font-size="10" fill="#333">
+      <tspan x="610" dy="0">{</tspan>
+      <tspan x="620" dy="12">"Id": 15,</tspan>
+      <tspan x="620" dy="12">"Name": "Alpine Boots",</tspan>
+      <tspan x="620" dy="12">"ProductPageUrl": "/item/15"</tspan>
+      <tspan x="610" dy="12">}</tspan>
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 450 240 L 450 270" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: AI formats response -->
+  <g id="step3">
+    <rect x="50" y="270" width="800" height="80" rx="8" fill="#f3e5f5" stroke="#9C27B0" stroke-width="2"/>
+    <text x="70" y="295" font-family="Arial" font-size="14" font-weight="bold" fill="#7B1FA2">3. AI receives enriched data and formats response</text>
+    <text x="70" y="315" font-family="Arial" font-size="12" fill="#555">System prompt guides AI to use markdown links:</text>
+    <rect x="70" y="325" width="760" height="20" rx="4" fill="#fff" stroke="#ddd"/>
+    <text x="80" y="340" font-family="Monaco, monospace" font-size="11" fill="#333">
+      "Check out [Alpine Trek Boots](/item/15) for mountain hiking"
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 450 350 L 450 380" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: MessageProcessor -->
+  <g id="step4">
+    <rect x="50" y="380" width="800" height="100" rx="8" fill="#e8f5e9" stroke="#4CAF50" stroke-width="2"/>
+    <text x="70" y="405" font-family="Arial" font-size="14" font-weight="bold" fill="#388E3C">4. MessageProcessor.AllowImages() renders HTML</text>
+    <text x="70" y="425" font-family="Monaco, monospace" font-size="11" fill="#555">
+      <tspan x="70" dy="0">Detects: [text](url) → Markdown Link</tspan>
+      <tspan x="70" dy="15">Renders as:</tspan>
+    </text>
+    <rect x="70" y="445" width="760" height="25" rx="4" fill="#fff" stroke="#ddd"/>
+    <text x="80" y="462" font-family="Monaco, monospace" font-size="11" fill="#333">
+      &lt;a href="/item/15" class="chat-product-link"&gt;Alpine Trek Boots&lt;/a&gt;
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 450 480 L 450 510" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 5: CSS Styling -->
+  <g id="step5">
+    <rect x="50" y="510" width="800" height="80" rx="8" fill="#fce4ec" stroke="#E91E63" stroke-width="2"/>
+    <text x="70" y="535" font-family="Arial" font-size="14" font-weight="bold" fill="#C2185B">5. CSS applies visual styling</text>
+    <text x="70" y="555" font-family="Monaco, monospace" font-size="11" fill="#555">
+      <tspan x="70" dy="0">.chat-product-link {</tspan>
+      <tspan x="90" dy="15">color: #5d2e8c;  /* Purple */</tspan>
+      <tspan x="90" dy="15">font-weight: 600; text-decoration: underline;</tspan>
+      <tspan x="70" dy="15">}</tspan>
+    </text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 450 590 L 450 620" stroke="#666" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 6: User clicks -->
+  <g id="step6">
+    <rect x="50" y="620" width="800" height="60" rx="8" fill="#e0f2f1" stroke="#009688" stroke-width="2"/>
+    <text x="70" y="645" font-family="Arial" font-size="14" font-weight="bold" fill="#00796B">6. User clicks link → Navigate to /item/15</text>
+    <text x="70" y="665" font-family="Arial" font-size="12" fill="#555">Product detail page displays with "Add to shopping bag" button</text>
+  </g>
+  
+  <!-- Code changes legend -->
+  <g id="legend">
+    <text x="50" y="25" font-family="Arial" font-size="11" font-weight="bold" fill="#666">Files Modified:</text>
+    <rect x="150" y="15" width="10" height="10" fill="#FF9800"/>
+    <text x="165" y="24" font-family="Arial" font-size="10" fill="#666">ChatState.cs</text>
+    <rect x="260" y="15" width="10" height="10" fill="#4CAF50"/>
+    <text x="275" y="24" font-family="Arial" font-size="10" fill="#666">MessageProcessor.cs</text>
+    <rect x="410" y="15" width="10" height="10" fill="#E91E63"/>
+    <text x="425" y="24" font-family="Arial" font-size="10" fill="#666">Chatbot.razor.css</text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#666" />
+    </marker>
+  </defs>
+</svg>

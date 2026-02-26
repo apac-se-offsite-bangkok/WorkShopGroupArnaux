@@ -9,9 +9,7 @@ public static partial class MessageProcessor
 {
     public static MarkupString AllowImages(string message)
     {
-        // Having to process markdown and deal with HTML encoding isn't ideal. If the language model could return
-        // search results in some defined format like JSON we could simply loop over it in .razor code. This is
-        // fine for now though.
+        // Process markdown to allow both images and hyperlinks for product navigation
 
         var result = new StringBuilder();
         var prevEnd = 0;
@@ -21,7 +19,19 @@ public static partial class MessageProcessor
         {
             var contentToHere = message.Substring(prevEnd, match.Index - prevEnd);
             result.Append(HtmlEncoder.Default.Encode(contentToHere));
-            result.Append($"<img title=\"{(HtmlEncoder.Default.Encode(match.Groups[1].Value))}\" src=\"{(HtmlEncoder.Default.Encode(match.Groups[2].Value))}\" />");
+            
+            var isMarkdownImage = match.Value.StartsWith('!');
+            var labelText = match.Groups[1].Value;
+            var targetUrl = match.Groups[2].Value;
+            
+            if (isMarkdownImage)
+            {
+                result.Append($"<img title=\"{(HtmlEncoder.Default.Encode(labelText))}\" src=\"{(HtmlEncoder.Default.Encode(targetUrl))}\" />");
+            }
+            else
+            {
+                result.Append($"<a href=\"{(HtmlEncoder.Default.Encode(targetUrl))}\" class=\"chat-product-link\">{(HtmlEncoder.Default.Encode(labelText))}</a>");
+            }
 
             prevEnd = match.Index + match.Length;
         }
